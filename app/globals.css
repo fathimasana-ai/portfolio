@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #07080b;
+  --surface: #0d1016;
+  --surface-raised: #121722;
+  --line: rgba(181, 202, 225, 0.14);
+  --line-bright: rgba(181, 202, 225, 0.25);
+  --text: #eef3f8;
+  --muted: #99a7b6;
+  --accent: #79d7f3;
+  --accent-soft: rgba(121, 215, 243, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-sans), Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(121, 215, 243, 0.28);
+  color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-grid {
+  background-image: linear-gradient(rgba(150, 187, 210, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150, 187, 210, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+}
+
+.hero-glow {
+  animation: drift 18s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(59, 182, 225, 0.18), transparent 64%);
+  filter: blur(12px);
+}
+
+.node {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.node:nth-child(2) { animation-delay: -1.4s; }
+.node:nth-child(3) { animation-delay: -2.8s; }
+
+@keyframes drift {
+  from { transform: translate3d(-5%, -2%, 0) scale(0.9); }
+  to { transform: translate3d(7%, 5%, 0) scale(1.08); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.22; transform: scale(0.8); }
+  50% { opacity: 0.8; transform: scale(1); }
+}
+
+.hairline {
+  border-color: var(--line);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.focus-ring:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.section-pad {
+  padding-bottom: clamp(5.5rem, 12vw, 10rem);
+  padding-top: clamp(5.5rem, 12vw, 10rem);
+}
+
+section[id],
+article[id] {
+  scroll-margin-top: 7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
