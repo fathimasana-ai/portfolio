@@ -41,15 +41,17 @@ export function Education() {
               {education.slice(1).map((item, index) => (
                 <Reveal key={`${item.school}-${item.qualification}`} delay={index * 0.05}>
                   <article className="h-full min-w-0 rounded-xl border hairline bg-[var(--surface)] p-6 sm:p-8">
-                    <div className="flex items-start justify-between gap-5">
+                    <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                       <div className="min-w-0">
                         <p className="eyebrow break-words">{item.school} · {item.location}</p>
                         <h3 className="mt-4 break-words text-xl font-medium leading-snug text-white sm:text-2xl">{item.qualification}</h3>
                       </div>
-                      <p className="shrink-0 font-mono text-sm text-[var(--accent)]">{item.score}</p>
+                      <div className="shrink-0 text-right">
+                        <p className="text-[clamp(3rem,8vw,5.5rem)] font-medium leading-[.8] tracking-[-.07em] text-[var(--accent)]">{item.score}</p>
+                        <p className="mt-4 font-mono text-[0.65rem] uppercase tracking-[.1em] text-[var(--muted)]">{item.scoreLabel}</p>
+                      </div>
                     </div>
                     <p className="mt-4 text-sm text-[var(--muted)]">{item.completed}</p>
-                    <p className="mt-5 font-mono text-[0.65rem] uppercase tracking-[.1em] text-[var(--muted)]">{item.scoreLabel}</p>
                     <div className="mt-6 flex flex-wrap gap-2">
                       {item.subjects.map((subject) => (
                         <span key={subject} className="rounded-full border hairline px-3 py-2 text-xs text-[var(--muted)]">{subject}</span>

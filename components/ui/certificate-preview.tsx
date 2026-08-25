@@ -25,7 +25,7 @@ export function CertificatePreview({ file }: { file: string }) {
           <span className="font-mono text-[0.62rem] uppercase tracking-[.12em]">Preview coming soon</span>
         </div>
       ) : (
-        <Image src={file} alt="Certificate document preview" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" onError={() => setFailed(true)} />
+        <Image src={file} alt="Certificate document preview" fill sizes="(max-width: 768px) 100vw, 33vw" className="p-2 object-contain" onError={() => setFailed(true)} />
       )}
     </div>
   );

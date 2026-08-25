@@ -47,7 +47,7 @@ export const profile: Profile = {
 // ---------------------------------------------------------------------------
 export const links: Links = {
   email: "fathimasalam901@gmail.com",
-  linkedin: "https://www.linkedin.com/in/fathimasana-ai/",
+  linkedin: "https://www.linkedin.com/in/fathimasana2",
   github: "https://github.com/fathimasana-ai",
   // TODO: replace with your live Vercel address once deployed.
   portfolio: "",
@@ -84,7 +84,7 @@ export const journey: JourneyStep[] = [
     label: "AI Projects",
     period: "2026",
     description:
-      "Built EcoLoop, an AI waste-identification and recycling platform, end to end: Flask app, computer-vision pipeline, database and deployment.",
+      "Built two AI applications end to end — VERA, a voice-first troubleshooting assistant built with Next.js, ElevenLabs, Context.dev and Gemini, and EcoLoop, an AI waste-identification and recycling platform with a Flask backend, computer-vision pipeline, database and deployment.",
   },
   {
     label: "Hackathon",
@@ -167,8 +167,7 @@ export const projects: Project[] = [
     role:
       "Project development and implementation, end to end. I designed and built the AI voice-agent integration — configuring the ElevenLabs conversational agent and wiring it to the app through a server-minted signed session so no API key ever reaches the browser. I designed the system prompt and the one-step-per-turn conversation behaviour, including the safety refusals and the \"done / repeat / stuck\" continuation logic, and built the tool and workflow integration behind it: the retrieval and extraction pipeline that finds the real manual (Context.dev) and turns it into ordered, source-anchored steps (Gemini structured output), plus the session memory, progress tracking and procedure caching that let VERA continue a task instead of restarting it. I developed the voice-first web interface — the voice orb, live step display, progress tracker, \"Why this step?\" source viewer and session summary — and I deployed the application to Vercel and tested the full end-to-end voice interaction on desktop and mobile.",
     github: "https://github.com/fathimasana-ai/vera",
-    // TODO: paste the VERA live demo URL here.
-    liveDemo: "",
+    liveDemo: "https://vera-slxe.vercel.app",
     // Paste your VERA demo video link here (YouTube / Drive), or put the file
     // at public/assets/projects/vera/demo.mp4 and write "/assets/projects/vera/demo.mp4".
     // While this is empty the section shows a "demo video coming soon" panel.
@@ -346,13 +345,13 @@ export const awards: Award[] = [
   },
   {
     title: "2nd Position — Category 4: Presentation",
-    event: "International Digital Fest 2026",
+    event: "International Digital Fest 2025",
     organisation: "University of Dubai",
-    date: "2026",
+    date: "2025",
     description:
       "Presented on a topic related to the UAE and the future of AI, placing second in the presentation category and winning an AED 700 cash prize.",
     highlights: ["AED 700 cash prize", "Topic: the UAE and future AI"],
-    proof: "",
+    proof: "/assets/certificates/international-digital-fest-2025.jpg",
   },
   {
     title: "1st Place — Best Marketing Strategy Award",
@@ -366,7 +365,7 @@ export const awards: Award[] = [
       "Best Marketing Strategy Award",
       "Best Outstanding Creativity and Innovation Award",
     ],
-    proof: "",
+    proof: "/assets/certificates/best-marketing-strategy-award.jpg",
     featured: true,
   },
 ];
@@ -421,7 +420,7 @@ export const certificates: Certificate[] = [
     title: "1 Million AI Prompters",
     issuer: "Dubai Future Foundation",
     year: "2026",
-    file: "",
+    file: "/assets/certificates/1-million-prompters.jpg",
     verifyUrl: "",
   },
   {
@@ -442,7 +441,7 @@ export const education: Education[] = [
     school: "Model Private School",
     location: "Abu Dhabi",
     qualification: "Higher Secondary Education — Commerce Stream (Grade 12)",
-    score: "96%",
+    score: "95%",
     scoreLabel: "Higher Secondary aggregate",
     completed: "Completed 2026",
     subjects: ["Accounting", "Economics", "Statistics", "Computer Application"],
@@ -539,9 +538,10 @@ export const proofs: Proof[] = [
     category: "Award",
   },
   {
-    title: "International Digital Fest 2026 — 2nd position",
-    description: "Presentation category, University of Dubai.",
-    href: "",
+    title: "International Digital Fest 2025 — 2nd position",
+    description:
+      "Presentation category, University of Dubai. 5th Edition, University of Dubai · 10 May 2025",
+    href: "/assets/certificates/international-digital-fest-2025.jpg",
     category: "Award",
   },
   {
@@ -554,14 +554,21 @@ export const proofs: Proof[] = [
   {
     title: "1 Million AI Prompters",
     description: "Dubai Future Foundation AI prompting programme.",
-    href: "",
+    href: "/assets/certificates/1-million-prompters.jpg",
     category: "Certificate",
   },
   {
-    title: "Entrepreneurship Competition — 1st place",
+    title: "Entrepreneurship Challenge — 1st place",
     description:
-      "Best Marketing Strategy and Best Outstanding Creativity and Innovation awards.",
-    href: "",
+      "First position at the Entrepreneurship Challenge organised by the Students' Council of Model Private School, Abu Dhabi, 30 October 2025.",
+    href: "/assets/certificates/entrepreneurship-challenge-first-place.jpg",
+    category: "Award",
+  },
+  {
+    title: "Best Marketing Strategy Award",
+    description:
+      "Certificate of Excellence for the Best Marketing Strategy Award at the same Entrepreneurship Challenge.",
+    href: "/assets/certificates/best-marketing-strategy-award.jpg",
     category: "Award",
   },
   {
@@ -571,7 +578,7 @@ export const proofs: Proof[] = [
     category: "Certificate",
   },
   {
-    title: "Higher Secondary result — 96%",
+    title: "Higher Secondary result — 95%",
     description: "Commerce stream, Model Private School, Abu Dhabi.",
     href: "",
     category: "Academic",
