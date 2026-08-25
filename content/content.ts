@@ -296,33 +296,47 @@ export const projects: Project[] = [
 //    Update "findings", "recommendations" and "pdf" once the research is done.
 // ---------------------------------------------------------------------------
 export const research: Research = {
-  title: "How AI Is Changing Small Businesses in the UAE",
+  title:
+    "How Artificial Intelligence Is Changing Small and Medium-Sized Businesses in the UAE: Barriers to Effective Adoption and Practical Strategies",
   status: "Completed",
   question:
-    "How is the adoption of Artificial Intelligence changing the way small businesses in the UAE operate, compete and grow?",
+    "What technological, organizational and environmental factors influence the effective adoption of artificial intelligence by SMEs in the UAE, and how can SMEs address the resulting implementation challenges?",
   objective:
-    "To examine where UAE SMEs are actually applying AI, what benefits and barriers they experience, and what this means for business owners and policymakers.",
+    "To identify the technological, organizational and environmental factors affecting AI adoption among UAE SMEs, examine the business value of AI for smaller firms, analyse what makes the move from experimentation to implementation difficult, and develop a practical framework for responsible and scalable adoption.",
   methodology: [
-    "Review of published reports and literature on AI adoption among UAE and regional SMEs.",
-    "Structured questions covering current AI use, motivation, cost and perceived risk.",
-    "Comparison of AI use across business functions and sectors.",
-    "Qualitative analysis of the responses and secondary sources.",
+    "Structured qualitative secondary research — no new survey or interview data is claimed.",
+    "Evidence drawn from UAE government publications, UAE institutional reports, UAE-specific empirical studies and peer-reviewed academic literature.",
+    "Two UAE empirical anchors: a 2025 Mohammed Bin Rashid School of Government study of 81 UAE AI and digital SMEs, and a 2025 peer-reviewed study of 315 respondents in UAE hospitality SMEs.",
+    "Sources selected for geographic relevance, business relevance, credibility, recency and methodological transparency.",
+    "The Technology–Organization–Environment (TOE) framework used as an analytical lens rather than statistically tested.",
   ],
   areas: [
-    "Marketing and customer engagement",
-    "Customer service and support automation",
-    "Operations and inventory",
-    "Accounting, finance and reporting",
-    "Skills, training and hiring",
-    "Cost, trust and data-privacy barriers",
+    "Technology — perceived usefulness, technical readiness, data, advanced computing",
+    "Organization — management support, employee capability, financial readiness",
+    "Environment — competitive pressure, regulation, ecosystem support",
+    "AI governance and responsible-AI requirements",
+    "Scaling from pilot to production",
   ],
-  // Paste each finding from your completed research as its own line below.
-  findings: [],
-  // Paste each recommendation from your completed research as its own line.
-  recommendations: [],
-  // Put the final PDF at public/assets/research/ and paste the path here,
-  // e.g. "/assets/research/ai-and-uae-small-businesses.pdf".
-  pdf: "",
+  findings: [
+    "SMEs matter disproportionately in the UAE — roughly 95% of businesses and around 86% of private-sector employment — so their ability to adopt AI is an economy-level question, not just a firm-level one.",
+    "AI access is not AI adoption. The UAE's digital foundations are comparatively strong, so the binding constraint has shifted from connectivity to organizational capability: integrating AI into a business process so it creates measurable value while staying responsible and scalable.",
+    "In the UAE hospitality SME sample, top-management support showed the strongest relationship with adoption intention (β = .48), ahead of competitive pressure (β = .47), government regulation (β = .43), perceived usefulness (β = .39), competitive advantage (β = .38) and employee capability (β = .30) — AI adoption behaves as a business-transformation decision, not an IT decision.",
+    "Skills matter but are not the single biggest barrier; capability has to be built alongside leadership commitment, clear business objectives, data and organizational readiness.",
+    "SMEs need evidence of value before they commit: perceived usefulness was significant, and OECD evidence shows returns are hard to estimate — which argues for starting from a business problem rather than from a tool.",
+    "Competitive pressure is a strong driver but not proof of value; it should trigger evaluation rather than imitation.",
+    "Scaling introduces its own barriers — advanced computing, financing, data, integration, governance and maintenance — so a pilot must ask whether the business can afford, manage, govern and scale the solution, not only whether the technology works.",
+  ],
+  recommendations: [
+    "Start from a business problem and its expected outcome, then choose the AI tool.",
+    "Give the initiative a named owner — an owner, manager or designated project leader.",
+    "Build capability progressively: AI literacy, then role-specific capability, then implementation and governance capability.",
+    "Use small pilots with a defined objective, owner, timeframe, budget and success criteria to test value before larger investment.",
+    "Measure business outcomes such as time saved, cost, error rates and response time — AI usage is not itself a measure of success.",
+    "Build responsible AI in from the start: privacy, security, transparency, accountability and human oversight, proportional to the risk.",
+    "Use external platforms, cloud services and specialist partners where advanced infrastructure or expertise is beyond internal capability.",
+    "Scale selectively — only once measurable value is demonstrated and the resources and risks are manageable.",
+  ],
+  pdf: "/assets/research/ai-and-uae-smes.pdf",
 };
 
 // ---------------------------------------------------------------------------
@@ -566,9 +580,10 @@ export const proofs: Proof[] = [
     category: "Award",
   },
   {
-    title: "Research paper — How AI Is Changing Small Businesses in the UAE",
-    description: "The full completed research document.",
-    href: "",
+    title: "Research paper — AI and small and medium-sized businesses in the UAE",
+    description:
+      "Completed 15-page paper: barriers to effective AI adoption among UAE SMEs, analysed through the Technology–Organization–Environment framework, with a seven-phase adoption framework (Define, Assess, Select, Pilot, Measure, Govern, Scale).",
+    href: "/assets/research/ai-and-uae-smes.pdf",
     category: "Research",
   },
 ];
