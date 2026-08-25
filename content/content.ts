@@ -385,36 +385,36 @@ export const certificates: Certificate[] = [
     title: "Mathematics for Machine Learning: Linear Algebra",
     issuer: "Imperial College London — Coursera",
     year: "2026",
-    file: "",
-    verifyUrl: "",
+    file: "/assets/certificates/coursera-linear-algebra-imperial.jpg",
+    verifyUrl: "https://coursera.org/verify/DWUQ6NKQB9SS",
   },
   {
     title: "Machine Learning Introduction for Everyone",
     issuer: "IBM — Coursera",
     year: "2026",
-    file: "",
-    verifyUrl: "",
+    file: "/assets/certificates/coursera-ml-intro-ibm.jpg",
+    verifyUrl: "https://coursera.org/verify/MF862L4JHKYZ",
   },
   {
     title: "Computational Thinking for Problem Solving",
     issuer: "University of Pennsylvania — Coursera",
     year: "2026",
-    file: "",
-    verifyUrl: "",
+    file: "/assets/certificates/coursera-computational-thinking-upenn.jpg",
+    verifyUrl: "https://coursera.org/verify/EA8P2BPXMWZZ",
   },
   {
     title: "AI for Everyone",
     issuer: "DeepLearning.AI — Coursera",
     year: "2026",
-    file: "",
-    verifyUrl: "",
+    file: "/assets/certificates/coursera-ai-for-everyone.jpg",
+    verifyUrl: "https://coursera.org/verify/J5Q9M0X8R9BD",
   },
   {
     title: "An Intuitive Introduction to Probability",
     issuer: "University of Zurich — Coursera",
     year: "2026",
-    file: "",
-    verifyUrl: "",
+    file: "/assets/certificates/coursera-probability-zurich.jpg",
+    verifyUrl: "https://coursera.org/verify/8CS3TK04J7N3",
   },
   {
     title: "1 Million AI Prompters",
@@ -545,10 +545,38 @@ export const proofs: Proof[] = [
     category: "Award",
   },
   {
-    title: "Coursera certificates",
+    title: "Mathematics for Machine Learning: Linear Algebra",
     description:
-      "Five completed course certificates — Imperial College London, IBM, University of Pennsylvania, DeepLearning.AI and University of Zurich.",
-    href: "",
+      "Coursera course certificate — Imperial College London, completed 19 August 2026. Verification code DWUQ6NKQB9SS.",
+    href: "/assets/certificates/pdf/coursera-linear-algebra-imperial.pdf",
+    category: "Certificate",
+  },
+  {
+    title: "Machine Learning Introduction for Everyone",
+    description:
+      "Coursera course certificate — IBM, completed 14 August 2026. Verification code MF862L4JHKYZ.",
+    href: "/assets/certificates/pdf/coursera-ml-intro-ibm.pdf",
+    category: "Certificate",
+  },
+  {
+    title: "Computational Thinking for Problem Solving",
+    description:
+      "Coursera course certificate — University of Pennsylvania, completed 14 August 2026. Verification code EA8P2BPXMWZZ.",
+    href: "/assets/certificates/pdf/coursera-computational-thinking-upenn.pdf",
+    category: "Certificate",
+  },
+  {
+    title: "AI for Everyone",
+    description:
+      "Coursera course certificate — DeepLearning.AI, completed 31 July 2026. Verification code J5Q9M0X8R9BD.",
+    href: "/assets/certificates/pdf/coursera-ai-for-everyone.pdf",
+    category: "Certificate",
+  },
+  {
+    title: "An Intuitive Introduction to Probability",
+    description:
+      "Coursera course certificate — University of Zurich, completed 24 August 2026. Verification code 8CS3TK04J7N3.",
+    href: "/assets/certificates/pdf/coursera-probability-zurich.pdf",
     category: "Certificate",
   },
   {
