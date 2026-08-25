@@ -427,7 +427,7 @@ export const certificates: Certificate[] = [
     title: "IELTS Academic — Overall Band 6.5",
     issuer: "IELTS",
     year: "2026",
-    file: "",
+    file: "/assets/certificates/ielts-academic.jpg",
     verifyUrl: "",
   },
 ];
@@ -601,20 +601,23 @@ export const proofs: Proof[] = [
   },
   {
     title: "IELTS Academic result",
-    description: "Overall Band 6.5.",
-    href: "",
+    description:
+      "Test Report Form — Overall Band 6.5 (Listening 7.5, Reading 6.0, Writing 6.0, Speaking 6.5), CEFR level B2. Test date 22 August 2026.",
+    href: "/assets/certificates/pdf/ielts-academic.pdf",
     category: "Certificate",
   },
   {
     title: "Higher Secondary result — 95%",
-    description: "Commerce stream, Model Private School, Abu Dhabi.",
-    href: "",
+    description:
+      "Certificate cum Mark Statement — Board of Higher Secondary Examinations, Government of Kerala, March 2026. Commerce stream at Model Private School, Abu Dhabi.",
+    href: "/assets/certificates/pdf/grade-12-certificate.pdf",
     category: "Academic",
   },
   {
     title: "Grade 10 result — 90%",
-    description: "Model Private School, Abu Dhabi — A grade in Mathematics.",
-    href: "",
+    description:
+      "Secondary School Leaving Certificate — General Education Department, Government of Kerala, March 2024. A grade in Mathematics.",
+    href: "/assets/certificates/pdf/grade-10-certificate.pdf",
     category: "Academic",
   },
   {
