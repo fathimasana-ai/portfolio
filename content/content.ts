@@ -423,13 +423,6 @@ export const certificates: Certificate[] = [
     file: "/assets/certificates/1-million-prompters.jpg",
     verifyUrl: "",
   },
-  {
-    title: "IELTS Academic — Overall Band 6.5",
-    issuer: "IELTS",
-    year: "2026",
-    file: "/assets/certificates/ielts-academic.jpg",
-    verifyUrl: "",
-  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -531,75 +524,6 @@ export const impact: Impact[] = [
 // ---------------------------------------------------------------------------
 export const proofs: Proof[] = [
   {
-    title: "Dubai AI Hub Builder Lab #3 — award",
-    description:
-      "Categorical award: Best Use of Context.dev, for the team project Manuel.",
-    href: "",
-    category: "Award",
-  },
-  {
-    title: "International Digital Fest 2025 — 2nd position",
-    description:
-      "Certificate of Merit — Category 4: Presentation, 5th Edition International Digital Fest, University of Dubai · 10 May 2025.",
-    href: "/assets/certificates/international-digital-fest-2025.jpg",
-    category: "Award",
-  },
-  {
-    title: "Mathematics for Machine Learning: Linear Algebra",
-    description:
-      "Coursera course certificate — Imperial College London, completed 19 August 2026. Verification code DWUQ6NKQB9SS.",
-    href: "/assets/certificates/pdf/coursera-linear-algebra-imperial.pdf",
-    category: "Certificate",
-  },
-  {
-    title: "Machine Learning Introduction for Everyone",
-    description:
-      "Coursera course certificate — IBM, completed 14 August 2026. Verification code MF862L4JHKYZ.",
-    href: "/assets/certificates/pdf/coursera-ml-intro-ibm.pdf",
-    category: "Certificate",
-  },
-  {
-    title: "Computational Thinking for Problem Solving",
-    description:
-      "Coursera course certificate — University of Pennsylvania, completed 14 August 2026. Verification code EA8P2BPXMWZZ.",
-    href: "/assets/certificates/pdf/coursera-computational-thinking-upenn.pdf",
-    category: "Certificate",
-  },
-  {
-    title: "AI for Everyone",
-    description:
-      "Coursera course certificate — DeepLearning.AI, completed 31 July 2026. Verification code J5Q9M0X8R9BD.",
-    href: "/assets/certificates/pdf/coursera-ai-for-everyone.pdf",
-    category: "Certificate",
-  },
-  {
-    title: "An Intuitive Introduction to Probability",
-    description:
-      "Coursera course certificate — University of Zurich, completed 24 August 2026. Verification code 8CS3TK04J7N3.",
-    href: "/assets/certificates/pdf/coursera-probability-zurich.pdf",
-    category: "Certificate",
-  },
-  {
-    title: "1 Million AI Prompters",
-    description: "Dubai Future Foundation AI prompting programme.",
-    href: "/assets/certificates/1-million-prompters.jpg",
-    category: "Certificate",
-  },
-  {
-    title: "Entrepreneurship Challenge — 1st place",
-    description:
-      "First position at the Entrepreneurship Challenge organised by the Students' Council of Model Private School, Abu Dhabi, 30 October 2025.",
-    href: "/assets/certificates/entrepreneurship-challenge-first-place.jpg",
-    category: "Award",
-  },
-  {
-    title: "Best Marketing Strategy Award",
-    description:
-      "Certificate of Excellence for the Best Marketing Strategy Award at the same Entrepreneurship Challenge.",
-    href: "/assets/certificates/best-marketing-strategy-award.jpg",
-    category: "Award",
-  },
-  {
     title: "IELTS Academic result",
     description:
       "Test Report Form — Overall Band 6.5 (Listening 7.5, Reading 6.0, Writing 6.0, Speaking 6.5), CEFR level B2. Test date 22 August 2026.",
@@ -621,23 +545,30 @@ export const proofs: Proof[] = [
     category: "Academic",
   },
   {
+    title: "International Digital Fest 2025 — 2nd position",
+    description:
+      "Certificate of Merit — Category 4: Presentation, 5th Edition International Digital Fest, University of Dubai · 10 May 2025.",
+    href: "/assets/certificates/international-digital-fest-2025.jpg",
+    category: "Award",
+  },
+  {
+    title: "Entrepreneurship Challenge — 1st place",
+    description:
+      "First position at the Entrepreneurship Challenge organised by the Students' Council of Model Private School, Abu Dhabi, 30 October 2025.",
+    href: "/assets/certificates/entrepreneurship-challenge-first-place.jpg",
+    category: "Award",
+  },
+  {
+    title: "Best Marketing Strategy Award",
+    description:
+      "Certificate of Excellence for the Best Marketing Strategy Award at the same Entrepreneurship Challenge.",
+    href: "/assets/certificates/best-marketing-strategy-award.jpg",
+    category: "Award",
+  },
+  {
     title: "Research paper — How AI Is Changing Small Businesses in the UAE",
     description: "The full completed research document.",
     href: "",
     category: "Research",
-  },
-  {
-    title: "EcoLoop — project screenshots",
-    description:
-      "Screens from the AI waste-identification platform, including the dashboard, an identification result and the leaderboard.",
-    href: "",
-    category: "Project",
-  },
-  {
-    title: "VERA — project screenshots",
-    description:
-      "Screens from the voice-first troubleshooting assistant interface.",
-    href: "",
-    category: "Project",
   },
 ];
