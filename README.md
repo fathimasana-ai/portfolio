@@ -31,6 +31,8 @@ Do not edit the files in `app/`, `components/`, configuration files, or `content
 
 ### Add a new certificate
 
+The portfolio currently lists 7 certificates. Add another object to the `certificates` array when you complete a new course:
+
 Copy a certificate object in the `certificates` list and change only its details:
 
 Before:
@@ -84,7 +86,6 @@ Copy a complete item in the `projects` array. Keep `id` lowercase and without sp
   features: ["Feature one", "Feature two"],
   stack: ["Python", "Next.js"],
   role: "Your role, described accurately.",
-  attribution: "",
   github: "https://github.com/...",
   liveDemo: "",
   demoVideo: "",
@@ -99,6 +100,22 @@ Copy a complete item in the `projects` array. Keep `id` lowercase and without sp
 ```
 
 Use the existing project objects as the complete field reference. Do not add technologies, awards or claims that are not factually accurate.
+
+### Add a project demo video
+
+For a hosted video, paste the URL into `demoVideo`:
+
+```ts
+demoVideo: "https://www.youtube.com/watch?v=example",
+```
+
+The project card renders a styled watch button for external video links. For a local file, put an `.mp4` or `.webm` file in the matching project folder and use its `/assets/` path:
+
+```ts
+demoVideo: "/assets/projects/vera/voice-demo.mp4",
+```
+
+The site renders local `.mp4` and `.webm` files in an accessible native video player. VERA screenshots and videos belong in `public/assets/projects/vera/`; use lowercase kebab-case filenames.
 
 ### Update a project link
 
@@ -122,7 +139,66 @@ caption: "Dashboard — points, level and impact",
 
 If a screenshot has not been uploaded yet, the site shows a calm placeholder instead of a broken image.
 
-### Upload or update the research PDF and findings
+### Add another academic milestone
+
+`education` is an array. The first entry receives the prominent academic treatment; later entries render as secondary milestone cards. Copy an existing object and change its data:
+
+```ts
+export const education: Education[] = [
+  {
+    school: "Another school",
+    location: "City",
+    qualification: "Qualification",
+    score: "90%",
+    scoreLabel: "Final aggregate",
+    completed: "Completed 2024",
+    subjects: ["Subject"],
+    highlights: ["Optional academic highlight"],
+  },
+];
+```
+
+Leave `highlights` out, or use an empty array, when there are no additional lines to show.
+
+### Add experience points
+
+Experience entries can include an optional `points` array. These render as bullets below the description:
+
+```ts
+{
+  role: "Team Leader",
+  organisation: "Organisation",
+  period: "2024",
+  description: "A concise overview of the role.",
+  points: [
+    "Specific responsibility or result.",
+    "Another accurate responsibility.",
+  ],
+},
+```
+
+Leave `points` out when the entry needs no bullet list.
+
+### Emphasise an award
+
+Set `featured: true` on an award that should receive the larger accent treatment. The awards remain in the same array order:
+
+```ts
+{
+  title: "Award title",
+  event: "Event name",
+  organisation: "Organisation",
+  date: "2026",
+  description: "Accurate description of the award.",
+  highlights: ["Short highlight", "Another stat"],
+  featured: true,
+  proof: "",
+},
+```
+
+Leave `featured` out for the standard card treatment.
+
+### Upload or update the research PDF, findings and recommendations
 
 Upload the PDF to `public/assets/research/`, then fill in the path and lists:
 
@@ -136,7 +212,7 @@ recommendations: [
 pdf: "/assets/research/ai-and-uae-smes.pdf",
 ```
 
-When the lists are empty, the site explains that findings will be published when the research is complete. The PDF button stays hidden until `pdf` is set.
+Add each finding and recommendation as its own accurate string. The research section keeps separate labelled blocks for both lists. When either list is empty, it uses a completed-research fallback; the PDF button stays hidden until `pdf` is set.
 
 ### Update awards and other achievements
 

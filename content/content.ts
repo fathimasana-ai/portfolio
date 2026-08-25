@@ -47,8 +47,7 @@ export const profile: Profile = {
 // ---------------------------------------------------------------------------
 export const links: Links = {
   email: "fathimasalam901@gmail.com",
-  // TODO: paste your LinkedIn profile URL here.
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/fathimasana-ai/",
   github: "https://github.com/fathimasana-ai",
   // TODO: replace with your live Vercel address once deployed.
   portfolio: "",
@@ -77,9 +76,9 @@ export const journey: JourneyStep[] = [
   },
   {
     label: "AI Courses",
-    period: "2026",
+    period: "Completed 2026",
     description:
-      "Structured study — AI for Everyone (DeepLearning.AI), Machine Learning Introduction (IBM), Computational Thinking (UPenn), Mathematics for Machine Learning: Linear Algebra (Imperial College London).",
+      "Five completed Coursera courses — Mathematics for Machine Learning: Linear Algebra (Imperial College London), Machine Learning Introduction for Everyone (IBM), Computational Thinking for Problem Solving (UPenn), AI for Everyone (DeepLearning.AI) and An Intuitive Introduction to Probability (University of Zurich) — plus 1 Million AI Prompters (Dubai Future Foundation).",
   },
   {
     label: "AI Projects",
@@ -95,9 +94,9 @@ export const journey: JourneyStep[] = [
   },
   {
     label: "Research",
-    period: "In progress",
+    period: "Completed 2026",
     description:
-      "Researching how Artificial Intelligence is changing small and medium-sized businesses in the UAE — bringing the Commerce background full circle.",
+      "Completed a research project on how Artificial Intelligence is changing small businesses in the UAE — bringing the Commerce background full circle.",
   },
 ];
 
@@ -139,7 +138,7 @@ export const projects: Project[] = [
     name: "VERA",
     subtitle: "Voice-Enabled Reasoning Assistant",
     summary:
-      "A voice-first troubleshooting assistant. You open a link, tap once, and say what is wrong with a device in plain words. VERA finds the real manufacturer manual, reasons through the problem with you, and walks you through the fix one spoken step at a time — remembering where you are and showing which part of the manual each step came from.",
+      "A voice-first troubleshooting assistant for everyday devices. You open a link, tap once, and describe the problem out loud — \"my Netgear router has a red light and no internet\" — and VERA takes it from there: it works out which device and model you mean, finds the real manufacturer manual for it, and turns that manual into an ordered repair procedure. Then it becomes a conversation: VERA speaks one step at a time and waits, so you can keep your hands and eyes on the device instead of on a screen. Say \"done\" and it moves on, \"repeat\" and it says it again, \"stuck\" and it helps you around the problem or offers to connect you to a human. The screen mirrors the conversation with the current step, a progress tracker and a \"Why this step?\" panel that shows the exact manual section each instruction came from, so nothing VERA says is unverifiable.",
     problem:
       "When a router shows a red light or a dishwasher shows an error code, every option is bad: a 90-page PDF nobody opens, forum threads for the wrong model, or a chatbot that invents eight steps in one breath. The problem is not the model's knowledge — it is pace, trust and grounding. That is hardest for people with low tech confidence, whose hands and eyes are already busy holding the device.",
     solution:
@@ -166,45 +165,56 @@ export const projects: Project[] = [
       "Git/GitHub",
     ],
     role:
-      "VERA is my own project. I built it on the permitted Manuel codebase and substantially developed it from there: I designed and implemented the conversational memory layer, the progress tracker and task-continuation behaviour, the multi-source extraction and procedure cache, the \"Why this step?\" source viewer and the session summary, plus VERA's new identity and voice-first interface. I configured and synced the ElevenLabs agent, wired the Gemini and Context.dev integrations behind server routes, and deployed and tested the result.",
-    attribution:
-      "VERA is built on Manuel (github.com/llmziad/Manuel), a team hackathon project I was part of, which won Best Use of Context.dev at Dubai AI Hub Builder Lab #3. I did not create the original Manuel project; its original developer gave permission to modify and extend the code, and VERA is my own extended version of it.",
+      "Project development and implementation, end to end. I designed and built the AI voice-agent integration — configuring the ElevenLabs conversational agent and wiring it to the app through a server-minted signed session so no API key ever reaches the browser. I designed the system prompt and the one-step-per-turn conversation behaviour, including the safety refusals and the \"done / repeat / stuck\" continuation logic, and built the tool and workflow integration behind it: the retrieval and extraction pipeline that finds the real manual (Context.dev) and turns it into ordered, source-anchored steps (Gemini structured output), plus the session memory, progress tracking and procedure caching that let VERA continue a task instead of restarting it. I developed the voice-first web interface — the voice orb, live step display, progress tracker, \"Why this step?\" source viewer and session summary — and I deployed the application to Vercel and tested the full end-to-end voice interaction on desktop and mobile.",
     github: "https://github.com/fathimasana-ai/vera",
     // TODO: paste the VERA live demo URL here.
     liveDemo: "",
-    // TODO: paste the demo video link here.
+    // Paste your VERA demo video link here (YouTube / Drive), or put the file
+    // at public/assets/projects/vera/demo.mp4 and write "/assets/projects/vera/demo.mp4".
+    // While this is empty the section shows a "demo video coming soon" panel.
     demoVideo: "",
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/assets/projects/vera/interface.png",
+        alt: "VERA voice interface — the voice orb with \"Talk to VERA\" and the prompt \"Tap to start, then just talk.\"",
+        caption: "The voice interface — one tap, then just talk",
+      },
+      {
+        src: "/assets/projects/vera/mobile.png",
+        alt: "VERA voice interface on a mobile screen",
+        caption: "Mobile — designed to be used while holding the device",
+      },
+    ],
     architecture: [
       {
         label: "User Voice",
         detail:
-          "You tap once and describe the problem out loud. The tap is what unlocks the microphone in the browser.",
+          "Everything starts with the user simply talking. They open the link, tap the voice orb once, and describe the problem in their own words — no forms, no model numbers to type, no menus to navigate. That single tap is what unlocks the microphone in the browser, and from that moment the whole session is a conversation.",
       },
       {
         label: "ElevenLabs",
         detail:
-          "The realtime voice layer: speech-to-text, text-to-speech, turn-taking and barge-in. The session is opened through a server-minted signed URL, so the API key never reaches the browser.",
+          "This is VERA's ears and voice. ElevenLabs handles the realtime voice loop — turning speech into text, speaking replies back naturally, and managing turn-taking so the user can interrupt mid-sentence and be heard. The voice session is opened through a signed link created on the server, so the API key stays private and the conversation feels immediate rather than like a series of recordings.",
       },
       {
         label: "VERA",
         detail:
-          "The step engine on Vercel. It holds the session memory, decides what to retrieve, and returns a typed result so the agent always has something safe to say.",
+          "The brain of the application, running on Vercel. It keeps track of the session — which device, which symptom, which step the user is on and what has already been tried — and decides what needs to be looked up next. Because it always returns a clear, structured result, the assistant never has to guess or improvise an answer.",
       },
       {
         label: "Context.dev / Gemini",
         detail:
-          "Context.dev searches for and scrapes the real manual into clean markdown (PDFs included); Gemini uses structured output to turn it into ordered, atomic steps with a source anchor on each one.",
+          "This is where the real knowledge comes from. Context.dev searches the web for the actual manufacturer manual for that exact model and converts it into clean readable text, including PDFs. Gemini then reads that manual and turns it into a short ordered list of simple steps, keeping a reference to the manual section behind every single step.",
       },
       {
         label: "Retrieved / Processed Information",
         detail:
-          "A grounded procedure: numbered steps, the manual section each came from, and progress state — rendered on screen while it is spoken.",
+          "The result is a grounded repair procedure rather than a generic answer: numbered steps, the manual section each step came from, and the user's progress so far. It appears on screen at the same moment it is spoken, so the user can read along, look back, or check exactly why a step was recommended.",
       },
       {
         label: "Voice Response",
         detail:
-          "One step, spoken, then VERA waits for you. \"Done\", \"repeat\", \"go back\" and \"stuck\" all continue from the right place.",
+          "VERA speaks one step, then stops and waits — which is the whole point of the design. The user says \"done\", \"repeat\", \"go back\" or \"stuck\", and VERA continues from exactly the right place instead of starting over. If the problem still cannot be solved, it offers to connect the user to a human helper.",
       },
     ],
   },
@@ -213,7 +223,7 @@ export const projects: Project[] = [
     name: "EcoLoop",
     subtitle: "AI-powered waste identification and recycling platform",
     summary:
-      "A web platform where you photograph an item of waste, an AI vision pipeline identifies what it is and which material it is made of, and you earn EcoPoints for recycling it — with levels, a leaderboard, rewards and an environmental-impact estimate to keep the habit going.",
+      "EcoLoop is a web platform that makes recycling correctly feel obvious and rewarding. You create an account, photograph an item you are about to throw away, and an AI vision pipeline identifies what the object is and which material it is made of — plastic, paper, glass, metal, e-waste or a battery — then tells you how it should be recycled. Each verified item earns EcoPoints scored by material, and those points build a level and a rank, so the app turns a one-off action into a habit. From the dashboard a user can see their points, level and progress, an estimate of the environmental impact they have saved, and a history of everything they have recycled with the AI result for each item. A leaderboard compares users, a rewards page shows what points can be redeemed for, and profiles let people manage their own account — with an admin dashboard for monitoring activity across the platform.",
     problem:
       "People want to recycle but are unsure what is actually recyclable and which bin an item belongs in, and there is little immediate feedback or motivation for doing it correctly.",
     solution:
@@ -247,8 +257,6 @@ export const projects: Project[] = [
     ],
     role:
       "Sole developer. I designed and built the whole application: the Flask routes and data model, the AI identification pipeline and its thresholds, the points and levels logic, all page templates and styling, and the deployment with a hosted PostgreSQL database and environment-based configuration.",
-    attribution:
-      "The live application is branded Wastivo — the same project after a rename.",
     github: "https://github.com/fathimasana-ai/ecoloop",
     liveDemo: "https://ecoloop.onrender.com",
     demoVideo: "",
@@ -257,18 +265,28 @@ export const projects: Project[] = [
       // public/assets/projects/ecoloop/ — see README.md.
       {
         src: "/assets/projects/ecoloop/home.png",
-        alt: "EcoLoop home page",
+        alt: "EcoLoop landing page — \"AI Powered Recycling. Recycle Smarter, Save the Planet.\"",
         caption: "Landing page",
       },
       {
         src: "/assets/projects/ecoloop/dashboard.png",
-        alt: "EcoLoop dashboard showing EcoPoints and recycling stats",
-        caption: "Dashboard — points, level and impact",
+        alt: "EcoLoop dashboard showing total EcoPoints, items recycled and level",
+        caption: "Dashboard — EcoPoints, items recycled and level",
       },
       {
         src: "/assets/projects/ecoloop/upload.png",
-        alt: "EcoLoop waste identification result after uploading a photo",
-        caption: "AI waste identification",
+        alt: "EcoLoop upload screen where a photo of waste is submitted for AI analysis",
+        caption: "AI waste identification — upload a photo for analysis",
+      },
+      {
+        src: "/assets/projects/ecoloop/leaderboard.png",
+        alt: "EcoLoop leaderboard ranking users by EcoPoints and number of uploads",
+        caption: "Leaderboard — users ranked by EcoPoints",
+      },
+      {
+        src: "/assets/projects/ecoloop/rewards.png",
+        alt: "EcoLoop rewards page listing unlocked EcoPoint badges",
+        caption: "Rewards — badges unlocked with EcoPoints",
       },
     ],
   },
@@ -279,11 +297,10 @@ export const projects: Project[] = [
 //    Update "findings", "recommendations" and "pdf" once the research is done.
 // ---------------------------------------------------------------------------
 export const research: Research = {
-  title:
-    "How Artificial Intelligence Is Changing Small and Medium-Sized Businesses in the UAE",
-  status: "In progress",
+  title: "How AI Is Changing Small Businesses in the UAE",
+  status: "Completed",
   question:
-    "How is the adoption of Artificial Intelligence changing the way small and medium-sized businesses in the UAE operate, compete and grow?",
+    "How is the adoption of Artificial Intelligence changing the way small businesses in the UAE operate, compete and grow?",
   objective:
     "To examine where UAE SMEs are actually applying AI, what benefits and barriers they experience, and what this means for business owners and policymakers.",
   methodology: [
@@ -300,10 +317,12 @@ export const research: Research = {
     "Skills, training and hiring",
     "Cost, trust and data-privacy barriers",
   ],
-  // Findings will be published here once the research is complete.
+  // Paste each finding from your completed research as its own line below.
   findings: [],
+  // Paste each recommendation from your completed research as its own line.
   recommendations: [],
-  // Put the final PDF at public/assets/research/ and paste the path here.
+  // Put the final PDF at public/assets/research/ and paste the path here,
+  // e.g. "/assets/research/ai-and-uae-small-businesses.pdf".
   pdf: "",
 };
 
@@ -336,14 +355,19 @@ export const awards: Award[] = [
     proof: "",
   },
   {
-    title: "Best Marketing Strategy Award",
+    title: "1st Place — Best Marketing Strategy Award",
     event: "Entrepreneurship Competition",
     organisation: "",
     date: "",
     description:
-      "Recognised for the strongest marketing strategy in an entrepreneurship competition.",
-    highlights: [],
+      "Placed 1st out of more than 30 participating teams, winning the Best Marketing Strategy Award and also receiving the Best Outstanding Creativity and Innovation Award — two awards from the same competition.",
+    highlights: [
+      "1st Place — 30+ participating teams",
+      "Best Marketing Strategy Award",
+      "Best Outstanding Creativity and Innovation Award",
+    ],
     proof: "",
+    featured: true,
   },
 ];
 
@@ -387,6 +411,20 @@ export const certificates: Certificate[] = [
     verifyUrl: "",
   },
   {
+    title: "An Intuitive Introduction to Probability",
+    issuer: "University of Zurich — Coursera",
+    year: "2026",
+    file: "",
+    verifyUrl: "",
+  },
+  {
+    title: "1 Million AI Prompters",
+    issuer: "Dubai Future Foundation",
+    year: "2026",
+    file: "",
+    verifyUrl: "",
+  },
+  {
     title: "IELTS Academic — Overall Band 6.5",
     issuer: "IELTS",
     year: "2026",
@@ -398,15 +436,28 @@ export const certificates: Certificate[] = [
 // ---------------------------------------------------------------------------
 // 9. ACADEMIC PROFILE
 // ---------------------------------------------------------------------------
-export const education: Education = {
-  school: "Model Private School",
-  location: "Abu Dhabi",
-  qualification: "Higher Secondary Education — Commerce Stream",
-  score: "96%",
-  scoreLabel: "Higher Secondary aggregate",
-  completed: "Completed 2026",
-  subjects: ["Accounting", "Economics", "Statistics", "Computer Application"],
-};
+//    The first entry is shown as the main academic milestone.
+export const education: Education[] = [
+  {
+    school: "Model Private School",
+    location: "Abu Dhabi",
+    qualification: "Higher Secondary Education — Commerce Stream (Grade 12)",
+    score: "96%",
+    scoreLabel: "Higher Secondary aggregate",
+    completed: "Completed 2026",
+    subjects: ["Accounting", "Economics", "Statistics", "Computer Application"],
+  },
+  {
+    school: "Model Private School",
+    location: "Abu Dhabi",
+    qualification: "Secondary Education (Grade 10)",
+    score: "90%",
+    scoreLabel: "Grade 10 aggregate",
+    completed: "Completed 2023",
+    subjects: ["Mathematics"],
+    highlights: ["A grade in Mathematics"],
+  },
+];
 
 // ---------------------------------------------------------------------------
 // 10. LEADERSHIP & EXPERIENCE
@@ -432,6 +483,20 @@ export const experience: Experience[] = [
     period: "May 2025",
     description:
       "Coordinated on-site logistics and supported the smooth running of a stadium event.",
+  },
+  {
+    role: "Team Leader — Firqatun Noor, Solace 2024",
+    organisation: "Al Rafidain Cultural Fest",
+    period: "2024",
+    description:
+      "Led one of the two teams at Solace 2024, a cultural competition involving over 1,000 students.",
+    points: [
+      "Led a team of approximately 200 participants in Solace 2024, a cultural competition involving 1,000+ students divided into two groups.",
+      "Organised and categorised participants according to the different competition categories and maintained the participant lists.",
+      "Coordinated and prepared students for various competitions and helped them understand their roles and responsibilities.",
+      "Guided team members by sharing ideas and coordinating competition preparation.",
+      "Managed communication and coordination among participants to ensure smooth team organisation and participation.",
+    ],
   },
 ];
 
@@ -482,9 +547,22 @@ export const proofs: Proof[] = [
   {
     title: "Coursera certificates",
     description:
-      "Imperial College London, IBM, University of Pennsylvania and DeepLearning.AI course certificates.",
+      "Five completed course certificates — Imperial College London, IBM, University of Pennsylvania, DeepLearning.AI and University of Zurich.",
     href: "",
     category: "Certificate",
+  },
+  {
+    title: "1 Million AI Prompters",
+    description: "Dubai Future Foundation AI prompting programme.",
+    href: "",
+    category: "Certificate",
+  },
+  {
+    title: "Entrepreneurship Competition — 1st place",
+    description:
+      "Best Marketing Strategy and Best Outstanding Creativity and Innovation awards.",
+    href: "",
+    category: "Award",
   },
   {
     title: "IELTS Academic result",
@@ -499,16 +577,28 @@ export const proofs: Proof[] = [
     category: "Academic",
   },
   {
-    title: "Research paper — AI and UAE SMEs",
-    description:
-      "Full research document. Will be published here once the research is complete.",
+    title: "Grade 10 result — 90%",
+    description: "Model Private School, Abu Dhabi — A grade in Mathematics.",
+    href: "",
+    category: "Academic",
+  },
+  {
+    title: "Research paper — How AI Is Changing Small Businesses in the UAE",
+    description: "The full completed research document.",
     href: "",
     category: "Research",
   },
   {
     title: "EcoLoop — project screenshots",
     description:
-      "Screens from the live AI waste-identification platform, including the dashboard and an identification result.",
+      "Screens from the AI waste-identification platform, including the dashboard, an identification result and the leaderboard.",
+    href: "",
+    category: "Project",
+  },
+  {
+    title: "VERA — project screenshots",
+    description:
+      "Screens from the voice-first troubleshooting assistant interface.",
     href: "",
     category: "Project",
   },

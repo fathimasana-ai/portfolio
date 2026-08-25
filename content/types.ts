@@ -66,11 +66,13 @@ export type Project = {
   features: string[];
   stack: string[];
   role: string;
-  /** Optional honest note, e.g. how the project relates to earlier work. */
-  attribution?: string;
   github: string;
   liveDemo: string;
-  /** YouTube / Drive link to a demo video. Leave "" to hide the button. */
+  /**
+   * YouTube / Drive link to a demo video, or a video file inside /public
+   * (e.g. /assets/projects/vera/demo.mp4). Leave "" and the section shows a
+   * "demo video coming soon" placeholder instead.
+   */
   demoVideo: string;
   screenshots: Screenshot[];
   /** Only used by VERA's "How it works" diagram. Leave out for other projects. */
@@ -100,6 +102,8 @@ export type Award = {
   highlights: string[];
   /** Path or URL to proof. Leave "" to hide the link. */
   proof: string;
+  /** Set to true to give this award the large, highlighted card. */
+  featured?: boolean;
 };
 
 export type Certificate = {
@@ -121,6 +125,8 @@ export type Education = {
   scoreLabel: string;
   completed: string;
   subjects: string[];
+  /** Optional extra lines, e.g. "A grade in Mathematics". */
+  highlights?: string[];
 };
 
 export type Experience = {
@@ -128,6 +134,8 @@ export type Experience = {
   organisation: string;
   period: string;
   description: string;
+  /** Optional bullet points listed under the description. */
+  points?: string[];
 };
 
 export type Impact = {
