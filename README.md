@@ -31,7 +31,7 @@ Do not edit the files in `app/`, `components/`, configuration files, or `content
 
 ### Add a new certificate
 
-The portfolio currently lists 7 certificates. Add another object to the `certificates` array when you complete a new course:
+The portfolio currently lists 7 certificates. Add another object to the `certificates` array when you complete a new course. Keep its preview image in `public/assets/certificates/` and its original PDF in `public/assets/certificates/pdf/`:
 
 Copy a certificate object in the `certificates` list and change only its details:
 
@@ -54,16 +54,16 @@ After:
   title: "New Course Name",
   issuer: "Issuing organisation",
   year: "2026",
-  file: "/assets/certificates/new-course-name.pdf",
+  file: "/assets/certificates/new-course-name.jpg",
   verifyUrl: "https://example.com/verify",
 },
 ```
 
-Upload `new-course-name.pdf` to `public/assets/certificates/`. Leave `file` or `verifyUrl` as `""` when it is not available.
+Upload `new-course-name.jpg` to `public/assets/certificates/` and the original `new-course-name.pdf` to `public/assets/certificates/pdf/`. For Coursera certificates, `verifyUrl` is the **Verify at** link printed on the certificate. Leave `file` or `verifyUrl` as `""` when it is not available.
 
-### Replace a certificate image or PDF
+### Replace a certificate preview or PDF
 
-Replace the file in `public/assets/certificates/` while keeping the same filename, or upload a new file and update the `file` path:
+Replace the preview in `public/assets/certificates/` or the original PDF in `public/assets/certificates/pdf/` while keeping the same filename, or upload a new file and update the `file` path:
 
 ```ts
 file: "/assets/certificates/new-course-name.png",
