@@ -540,7 +540,7 @@ export const proofs: Proof[] = [
   {
     title: "International Digital Fest 2025 — 2nd position",
     description:
-      "Presentation category, University of Dubai. 5th Edition, University of Dubai · 10 May 2025",
+      "Certificate of Merit — Category 4: Presentation, 5th Edition International Digital Fest, University of Dubai · 10 May 2025.",
     href: "/assets/certificates/international-digital-fest-2025.jpg",
     category: "Award",
   },
