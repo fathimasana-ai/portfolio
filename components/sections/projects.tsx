@@ -17,10 +17,37 @@ export function Projects() {
                 <div>
                   <div className="flex items-start justify-between gap-4"><div className="min-w-0"><p className="eyebrow">Project 0{index + 1}</p><h3 className="mt-4 text-4xl font-medium tracking-[-0.06em] text-white sm:text-6xl">{project.name}</h3><p className="mt-3 break-words text-lg text-[var(--accent)]">{project.subtitle}</p></div><span className="font-mono text-4xl text-white/10">0{index + 1}</span></div>
                   <p className="mt-8 text-base leading-8 text-[var(--muted)]">{project.summary}</p>
-                  <div className="mt-8 flex flex-wrap gap-3"><LinkButton href={project.github} icon="Github">GitHub</LinkButton><LinkButton href={project.liveDemo} icon="ArrowUpRight">Live demo</LinkButton><LinkButton href={project.demoVideo} icon="Play">Demo video</LinkButton></div>
+                  <div className="mt-8 flex flex-wrap gap-3"><LinkButton href={project.github} icon="Github">GitHub</LinkButton><LinkButton href={project.liveDemo} icon="ArrowUpRight">Live demo</LinkButton></div>
                 </div>
                 <div className="grid content-start gap-3 sm:grid-cols-2">
-                  {project.screenshots.length ? project.screenshots.map((shot) => <MediaFrame key={shot.src} {...shot} />) : <div className="flex min-h-56 items-center justify-center rounded-xl border hairline bg-[var(--surface)] p-8 text-center font-mono text-[0.68rem] uppercase tracking-[0.12em] text-[var(--muted)] sm:col-span-2">Project screenshots coming soon</div>}
+                  {project.screenshots.length ? project.screenshots.map((shot) => <div key={shot.src} className={project.screenshots.length === 1 ? "sm:col-span-2" : undefined}><MediaFrame {...shot} /></div>) : <div className="flex min-h-56 items-center justify-center rounded-xl border hairline bg-[var(--surface)] p-8 text-center font-mono text-[0.68rem] uppercase tracking-[0.12em] text-[var(--muted)] sm:col-span-2">Project screenshots coming soon</div>}
+                  <div className="sm:col-span-2">
+                    {project.demoVideo ? (
+                      /\.(mp4|webm)(?:[?#].*)?$/i.test(project.demoVideo) ? (
+                        <div className="overflow-hidden rounded-xl border hairline bg-[var(--surface)]">
+                          <video controls preload="metadata" className="aspect-video w-full" aria-label={`${project.name} demo video`}>
+                            <source src={project.demoVideo} />
+                            Your browser does not support the video element.
+                          </video>
+                        </div>
+                      ) : (
+                        <div className="flex min-h-32 items-center justify-between gap-5 rounded-xl border hairline bg-[var(--surface)] p-6">
+                          <div>
+                            <p className="eyebrow">Demo video</p>
+                            <p className="mt-3 text-sm text-[var(--muted)]">Watch a guided walkthrough of {project.name}.</p>
+                          </div>
+                          <LinkButton href={project.demoVideo} icon="Play">Watch demo</LinkButton>
+                        </div>
+                      )
+                    ) : (
+                      <div className="flex min-h-32 items-center justify-center rounded-xl border hairline bg-[var(--surface)] p-6 text-center">
+                        <div>
+                          <p className="eyebrow">Demo video</p>
+                          <p className="mt-3 text-sm text-[var(--muted)]">A project walkthrough is coming soon.</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </Reveal>
@@ -32,7 +59,6 @@ export function Projects() {
               <Reveal><div><p className="eyebrow">What I built</p><ul className="mt-5 space-y-3">{project.features.map((feature) => <li key={feature} className="flex gap-3 text-sm leading-6 text-[var(--muted)]"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />{feature}</li>)}</ul></div></Reveal>
               <Reveal delay={0.06}><div><p className="eyebrow">Technology</p><div className="mt-5 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="rounded-full border hairline px-3 py-2 text-xs text-[var(--muted)]">{item}</span>)}</div><p className="eyebrow mt-10">My role</p><p className="mt-4 text-sm leading-7 text-[var(--muted)]">{project.role}</p></div></Reveal>
             </div>
-            {project.attribution && <div className="mt-10 border-l-2 border-[var(--accent)] bg-[var(--accent-soft)] px-5 py-4 text-sm leading-7 text-[#d7f4fc]"><strong className="font-medium text-white">Attribution &amp; provenance:</strong> {project.attribution}</div>}
             {project.architecture && <ArchitectureFlow steps={project.architecture} />}
           </article>
         ))}

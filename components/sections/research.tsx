@@ -19,7 +19,10 @@ export function Research() {
               {(research.findings.length > 0 || research.recommendations.length > 0) ? <div className="space-y-7">
                 {research.findings.length > 0 && <div><p className="eyebrow">Findings</p><div className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">{research.findings.map((item) => <p key={item}>— {item}</p>)}</div></div>}
                 {research.recommendations.length > 0 && <div><p className="eyebrow">Recommendations</p><div className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">{research.recommendations.map((item) => <p key={item}>— {item}</p>)}</div></div>}
-              </div> : <div><p className="eyebrow">Findings</p><p className="mt-3 text-sm leading-7 text-[var(--muted)]">Findings will be published when the research is complete.</p></div>}
+              </div> : <div className="space-y-7">
+                <div><p className="eyebrow">Findings</p><p className="mt-3 text-sm leading-7 text-[var(--muted)]">Findings are set out in the full research document.</p></div>
+                <div><p className="eyebrow">Recommendations</p><p className="mt-3 text-sm leading-7 text-[var(--muted)]">Recommendations are set out in the full research document.</p></div>
+              </div>}
             </div>
           </div>
         </Reveal>
