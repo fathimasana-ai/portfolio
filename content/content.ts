@@ -257,7 +257,7 @@ export const projects: Project[] = [
     role:
       "Sole developer. I designed and built the whole application: the Flask routes and data model, the AI identification pipeline and its thresholds, the points and levels logic, all page templates and styling, and the deployment with a hosted PostgreSQL database and environment-based configuration.",
     github: "https://github.com/fathimasana-ai/ecoloop",
-    liveDemo: "https://ecoloop.onrender.com",
+    liveDemo: "https://ecoloop-1c01.onrender.com",
     demoVideo: "",
     screenshots: [
       // Replace the src paths with your own screenshots in
